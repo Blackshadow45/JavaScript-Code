@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Best JS Course</title>
+
+<link rel="" href="" />
+</head>
+
+<body>
+<h1>Best JS Course</h1>
+<hr />
+<p>Understanding The DOM Tree Structure</p>
+<p>It's easy. Helps JS to communicate with HTML</p>
+
+
+<script>
+ let parent = document;
+ let childBody = document.body;
+ let childHead = document.head;
+ const bodyElement = document.body;
+ ///let bodyChild = bodyElement.childNodes;
+ //console.log(bodyChild);
+  //console.log(childBody);
+//let bodyChild = bodyElement.children;
+//console.log(bodyChild);
+///let bodyChild = bodyElement.children;
+///let firstChild = bodyElement.firstElementChild;
+//let firstChild = bodyElement.firstChild;
+const htmlBody = document.body;
+
+let bodyChild = htmlBody.children;
+let lastChild = htmlBody.lastElementChild;
+console.log(lastChild);
+
+
+let firstChild = htmlBody.children;
+let nextSibling = firstChild.nextElementSibling;
+console.log(nextSibling);
+
+let previousSibling = nextSibling.previousElementSibling;
+console.log(previousSibling);
+
+let parentNode = previousSibling.parentElement;
+console.log(parentNode);
+</script>
+
+</body>
+
+</html>

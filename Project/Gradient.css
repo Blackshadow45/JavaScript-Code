@@ -1,0 +1,53 @@
+.ui{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    
+}
+
+#myBtn1{
+   
+    height: 35px;
+    width: 85px;
+    border: 1px none black;
+    border-radius: 12px;
+    font-family: sans-serif;
+    font-size: large;
+    box-shadow: none;
+    background-color: rgb(169, 212, 134);
+
+    
+}
+
+#myBtn2{
+    height: 35px;
+    width: 85px;
+    border: 1px none black;
+    border-radius: 12px;
+    font-family: sans-serif;
+    font-size: large;
+    box-shadow: none;
+    background-color: rgb(169, 212, 134);
+
+}
+.txt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 250px;
+    margin-left: 250px;
+}
+
+.copyCode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 350px;
+    margin-right: 450px;
+
+}
+.copyCode:hover{
+    cursor: grab;
+
+}

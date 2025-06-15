@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+   <div>
+     <h1 id="heading">Dom API</h1>
+    <ul class="lists">
+     <li>node 1</li>
+     <li> node 2</li>
+     <li>node 3</li>
+     <li> node 4</li>
+    </ul>
+  <h1>Dom API 2 </h1>
+       
+    <input>
+     <button>click me</button>
+  </input>
+   </div>
+
+  <script>
+    let findElementById = document.getElementById("heading");
+    console.log(findElementById.innerHTML);
+    const findElementByClassName = document.getElementsByClassName("lists");
+    console.log(...findElementByClassName);
+
+    for(let ele of findElementByClassName){
+      console.log(ele);
+    }
+
+
+    
+  </script>
+</body>
+</html>

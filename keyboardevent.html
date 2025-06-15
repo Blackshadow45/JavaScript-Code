@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="keyboardevent.css">
+</head>
+<body>
+    <input type="text" id="myInput" placeholder="type something.......">
+    <div class="a">
+        <p class="keyPressed">key pressed:</p>
+        <p class="keycode">key code:</p>
+        <p class="charcode">char codeAt:</p>
+        <p class="eventType">Event type:</p>
+    </div>
+
+    <script>
+        // Step 1: Get the input box from HTML by its ID
+        var myInput = document.getElementById('myInput');
+
+        // Step 2: Create a function to handle key events
+        const handlekeyevent = (event) => {
+            // Show full event details in the console (for debugging)
+            console.log(event);
+
+            // Print key details in the console
+            console.log("Key pressed:", event.key);
+            console.log("Key code:", event.code);
+            console.log("Event type:", event.type);
+
+            // Step 3: Update the webpage with key event details
+
+            // Show which key was pressed (e.g., A, B, 1, etc.)
+            document.querySelector(".keyPressed").textContent = `Key pressed: ${event.key}`;
+
+            // Show the special key code (e.g., KeyA, Digit1, Enter, etc.)
+            document.querySelector(".keycode").textContent = `Key code: ${event.code}`;
+
+            // Show the character code (a number for the key, used in computers)
+            // We use a check to prevent errors when special keys (like Shift) are pressed
+            document.querySelector(".charcode").textContent = `Char code: ${event.key ? event.key.charCodeAt(0) : "N/A"}`;
+
+            // Show the event type (it will always be "keydown" here)
+            document.querySelector(".eventType").textContent = `Event type: ${event.type}`;
+        };
+
+        // Step 4: Tell JavaScript to listen for key presses in the input box
+        myInput.addEventListener('keydown', handlekeyevent);
+    </script>
+</body>
+</html>

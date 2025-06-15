@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+              
+            div{
+                text-align: center;
+                color: cornflowerblue;
+                
+            
+              
+            }
+            
+            
+            
+        </style>
+
+    </head>
+
+    <body>
+        <div>
+            <h1 >Simple DOM Todo App</h1>
+            <input type = "text" id="inputfield"/>
+            <button class="btn">Click Me</button>
+        <div class="todoListsElem">
+            <!-- <p id="todoFirst"></p> -->
+        </div>
+        </div>
+
+        <script>
+       let inputele = document.getElementById("inputfield");
+       console.log(inputele);
+       let clickbtn = document.querySelector(".btn");
+       console.log(clickbtn);
+
+       let todoEle = document.querySelector(".todoListsElem");
+
+       //let todoFirst = document.getElementById('todoFirst');
+        
+       const addTodo = () =>{
+       console.log(inputele.value);
+       //todoFirst.textContent = inputele.value;
+       let pElem = document.createElement("p");
+       pElem.textContent = inputele.value;
+       console.log(pElem);
+
+       todoEle.append(pElem);
+
+       inputele.value = ""; 
+
+       }
+       clickbtn.addEventListener('click',()=>{
+        addTodo();
+       });
+
+       todoEle.addEventListener('click',()=>{
+           console.log(event.target);
+
+           let currentElem = event.target;
+           currentElem.remove();
+       });
+        </script>
+    </body>
+</html>

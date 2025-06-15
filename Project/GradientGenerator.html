@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Gradient.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="ui">
+        <div>
+            <button id="myBtn1">#051937</button>
+            <button id="myBtn2">#008793</button>
+        </div>
+    <h2 class="txt">Copy Your Code From Here:</h2>
+        <div class="copyCode">
+            background-image : Linear-gradient(to right, rgb(92, 145, 229), rgb(152, 63, 198))
+        </div>
+    </section>
+
+    <script>
+        let btn1=document.getElementById('myBtn1');
+        let btn2=document.getElementById('myBtn2');
+        let copydiv=document.querySelector('.copyCode');
+        let rgb1='#004773';
+        let rgb2='#54d542';
+
+
+        const hexvalues=()=>{
+     
+        
+         let myHexaValues = "0123456789abcdef";
+         let colors="#";
+         for(let i=0;i<6;i++){
+            colors=colors+myHexaValues[Math.floor(Math.random()*16)];
+         }   
+         return colors;
+        
+    };
+
+
+        const handleEvent1=()=>{
+             rgb1 = hexvalues();
+            console.log(rgb1);
+            myBtn1.innerText=rgb1;
+            document.body.style.backgroundImage = `linear-gradient(to right,${rgb1},#444)`;
+            copydiv.innerHTML=`background-image : Linear-gradient(to right, ${rgb1}, ${rgb2})`;
+        }
+
+        const handleEvent2=()=>{
+            rgb2 = hexvalues();
+            console.log(rgb2 );
+            myBtn2.innerText=rgb2;
+            document.body.style.backgroundImage = `linear-gradient(to right,${rgb1},${rgb2})`;
+            copydiv.innerHTML=`background-image : Linear-gradient(to right, ${rgb1}, ${rgb2}))`;
+        }
+
+        btn1.addEventListener('click',handleEvent1);
+        btn2.addEventListener('click',handleEvent2);
+
+        copydiv.addEventListener('click',()=>{
+            navigator.clipboard.writeText(copydiv.innerText);
+        });
+    </script>
+</body>
+</html>

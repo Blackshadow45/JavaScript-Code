@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo Buddy</title>
+</head>
+<body>
+    <div >
+        <h1>Dom ToDo Buddy</h1>
+        <input type="text" id="search"/>
+        <button class="btn" >Click Me</button>
+        <div class="todoList"></div>
+    </div>
+
+
+ <script>
+    let getele = document.getElementById("search");
+    // console.log(getele);
+
+    let clckbtn = document.querySelector(".btn");
+    // console.log(clckbtn);
+    
+            const addToDO=()=>{
+            console.log(getele.value);
+            }
+            
+            clickbtn=addEventListener('click', ()=>{
+                addToDO();
+            });
+
+
+ </script>
+
+  
+    
+</body>
+</html>

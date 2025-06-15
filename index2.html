@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Inline Event -->
+     <h1>Inline Event</h1>
+     <button class="btn" id="1" onclick="alert('Welcome🙌')">Greeting</button>
+     <button class="btn" id="2" ondblclick="alert('welcome again')">greetings again</button>
+     <button class="btn" id="3" onmouseover="alert('welcome again')">grreting</button>
+
+      <!-- start DOM Event Handler  -->
+       <h1>Dom Event Handler</h1>
+       <button class="btn" id="myBtn">Greet</button>
+       <button class="btn" id="myBtn1">Greetings</button>
+       <button class="btn" id="myBtn2">Greetings again</button>
+
+        <!-- add event listener -->
+        <h1>Add Event Listener</h1>
+        <button class="btn" id="myBtn4">Greet</button>
+        <button class="btn" id="myBtn5">Greetings</button>
+        <button class="btn" id="myBtn6">Greetings again</button>
+ 
+ 
+       <!-- End Dom event handler  -->
+
+    
+     <!--  -->
+     <script>
+
+        document.getElementById('myBtn').onclick=()=>{
+            alert('welcome');
+        };  /////this is fat arrow
+
+        document.getElementById('myBtn1').onclick=function(){
+            alert("Welcome in Tech World");
+        };
+
+        document.getElementById('myBtn2').onmouseover=function(){
+            alert('Hey ! again');
+        }
+
+        ////add Event Listener 
+        document.getElementById('myBtn4').addEventListener("click",()=>{
+            alert("Welcome to Webpage");
+        });
+
+        document.getElementById('myBtn5').addEventListener("mouseover",function(){
+                alert("Welcome....");
+        });
+
+        document.getElementById('myBtn6').addEventListener("dblclick",function(){
+            alert("Welcome Again.....");
+        });
+
+     </script>
+    
+</body>
+</html>

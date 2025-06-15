@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+        <h1 id="heading">DOM API</h1>
+        
+        
+        <ul class="list-of--nodes">
+        
+        <li>1 node</li>
+        
+        
+        <li>2 node</li>
+        
+        <li>3 node</li>
+        
+        <!- <li>4th node </li> →
+        
+        <li>4 node</li>
+        
+        <li style="display: none">5 node</li>
+        
+        </ul>
+        
+        
+        </div>
+
+        <script>
+            let findElementbyId =  document.getElementById("heading");
+            console.log(findElementbyId);
+            console.log(findElementbyId.innerHTML);
+            console.log(findElementbyId.innerText);
+            console.log(findElementbyId.textContent);
+
+
+            const findElementbyClassName = document.getElementsByClassName("list-of--nodes");
+            console.log(findElementbyClassName);
+            console.log(...findElementbyClassName); //// spread operator it spread the content
+             
+
+            for(let ele of findElementbyClassName){
+                console.log(ele);
+                console.log(ele.innerHTML);
+                console.log(ele.innerText);
+                console.log(ele.textContent);
+            }
+
+            ////GETELEMENTBY TAGNAME
+
+            const getElementsByTagName = document.getElementsByTagName("li");
+            console.log(getElementsByTagName);
+
+            for(let elem of getElementsByTagName){
+                console.log(elem);
+            }
+
+            ////QUERY SELECTOR
+            const findElementByQuerySelector = document.querySelector("#heading");
+            console.log(findElementByQuerySelector);
+            console.log(findElementByQuerySelector.innerHTML);
+            console.log(findElementByQuerySelector.innerHTML = "Viraj Deshmukh");
+            console.log(findElementByQuerySelector.innerText = "Viraj Deshmukh");
+
+            const findElementByQuerySelectorAll = document.querySelectorAll("li");
+            console.log(findElementByQuerySelectorAll);
+
+            findElementByQuerySelectorAll.forEach((curEle)=>{
+                console.log(curEle);
+            })
+        </script>
+</body>
+</html>

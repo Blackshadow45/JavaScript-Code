@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Demo</title>
+  <style>
+    #box, #dragBox {
+      width: 100px; height: 100px;
+      border: 2px solid black;
+      margin: 10px;
+    }
+    #dragBox {
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+
+<h3>Click Event</h3>
+<button onclick="handleEvent('onclick')">Click here</button>
+
+<h3>Mouse Events</h3>
+<div id="box"
+  oncontextmenu="handleEvent('oncontextmenu')"
+  ondblclick="handleEvent('ondblclick')"
+  onmousedown="handleEvent('onmousedown')"
+  onmouseenter="handleEvent('onmouseenter')"
+  onmouseleave="handleEvent('onmouseleave')"
+  onmousemove="handleEvent('onmousemove')"
+  onmouseover="handleEvent('onmouseover')"
+  onmouseout="handleEvent('onmouseout')"
+  onmouseup="handleEvent('onmouseup')">
+  Mouse Box
+</div>
+
+<h3>Keyboard Events (Click input then type)</h3>
+<input type="text" 
+  onkeydown="handleEvent('onkeydown')" 
+  onkeypress="handleEvent('onkeypress')" 
+  onkeyup="handleEvent('onkeyup')">
+
+<h3>Form Events</h3>
+<form onsubmit="handleEvent('onsubmit'); return false;" onreset="handleEvent('onreset')">
+  <input type="text" required 
+    onblur="handleEvent('onblur')" 
+    onchange="handleEvent('onchange')" 
+    onfocus="handleEvent('onfocus')" 
+    oninput="handleEvent('oninput')" 
+    oninvalid="handleEvent('oninvalid')" 
+    onselect="handleEvent('onselect')">
+  <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+</form>
+
+<h3>Drag & Drop</h3>
+<div id="dragBox" draggable="true"
+  ondrag="handleEvent('ondrag')" 
+  ondragstart="handleEvent('ondragstart')" 
+  ondragend="handleEvent('ondragend')">
+  Drag me
+</div>
+<div id="box" 
+  ondragover="event.preventDefault()" 
+  ondragenter="handleEvent('ondragenter')" 
+  ondragleave="handleEvent('ondragleave')" 
+  ondrop="handleEvent('ondrop')">
+  Drop here
+</div>
+
+<h3>Clipboard Events (Copy/Paste here)</h3>
+<textarea 
+  oncopy="handleEvent('oncopy')" 
+  oncut="handleEvent('oncut')" 
+  onpaste="handleEvent('onpaste')">
+</textarea>
+
+<h3>Media Events</h3>
+<video width="200" controls 
+  onplay="handleEvent('onplay')" 
+  onpause="handleEvent('onpause')" 
+  onended="handleEvent('onended')" 
+  onvolumechange="handleEvent('onvolumechange')" 
+  ontimeupdate="handleEvent('ontimeupdate')">
+  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+</video>
+
+<h3>Animation</h3>
+<div id="animBox" style="width:100px; height:100px; background:red; animation: move 2s infinite;"
+  onanimationstart="handleEvent('animationstart')"
+  onanimationiteration="handleEvent('animationiteration')"
+  onanimationend="handleEvent('animationend')">
+</div>
+<style>
+@keyframes move {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(50px); }
+  100% { transform: translateX(0); }
+}
+</style>
+
+<h3>Misc Events</h3>
+<div 
+  onwheel="handleEvent('onwheel')" 
+  ontouchstart="handleEvent('ontouchstart')" 
+  ontouchmove="handleEvent('ontouchmove')" 
+  ontouchend="handleEvent('ontouchend')" 
+  ontouchcancel="handleEvent('ontouchcancel')">
+  Try scroll/touch
+</div>
+
+<script>
+  // Simple logger for all events
+  function handleEvent(name) {
+    console.log(`Triggered: ${name}`);
+  }
+
+  // Frame & page events
+  window.onresize = () => handleEvent('onresize');
+  window.onscroll = () => handleEvent('onscroll');
+  window.onbeforeunload = () => handleEvent('onbeforeunload');
+  window.onhashchange = () => handleEvent('onhashchange');
+  window.onload = () => handleEvent('onload');
+  window.onunload = () => handleEvent('onunload');
+  window.onpageshow = () => handleEvent('onpageshow');
+  window.onpagehide = () => handleEvent('onpagehide');
+  window.ononline = () => handleEvent('ononline');
+  window.onoffline = () => handleEvent('onoffline');
+  window.onpopstate = () => handleEvent('onpopstate');
+  window.onstorage = () => handleEvent('onstorage');
+</script>
+
+</body>
+</html>

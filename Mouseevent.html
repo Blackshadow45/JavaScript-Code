@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Mouseevent.css">
+    <title>Document</title>
+</head>
+<body>
+
+<section>
+    <div class="rectangle">
+
+    </div>
+    <button id="mybutton">click me</button>
+</section>
+     <script>
+        /// step 1: take refrence
+        // Select the button and rectangle elements
+        ///Get the button element by id  
+        let mybtn = document.getElementById('mybutton');
+        let rectdiv= document.querySelector('.rectangle');
+
+        ///// step 3: define function
+         // Function to change the rectangle's background color on button click
+        const handleMouseEvents=()=>{
+            console.log("Fisrt function called sucessfully");
+            rectdiv.style.backgroundColor="#f5ee62";
+        }
+        
+        const handleMouseEvents2=()=>{
+            console.log("Double click");
+            rectdiv.classList.add("addTransition");
+        }
+
+        const handleMouseEvents3=()=>{
+            console.log("mouseover event called");
+            rectdiv.classList.add('addTransition1');
+        }
+
+        const handleMouseEvents4=()=>{
+            console.log("Mouse out event called");
+            rectdiv.classList.add('addTransition2');
+            
+        }
+
+        const handleMouseEvents5=()=>{
+            console.log("mousedown event called");
+            rectdiv.classList.add("addTransition3");
+        }
+
+        const handleMouseEvents6=()=>{
+            console.log("Mouseup event called ");
+            rectdiv.classList.add("addTreansition4");
+        }
+
+
+        
+
+        // Attach event listener to the button
+        mybutton.addEventListener('click',handleMouseEvents); /// step 2: function called
+        mybutton.addEventListener('dblclick',handleMouseEvents2);
+        rectdiv.addEventListener('mouseover',handleMouseEvents3);
+        rectdiv.addEventListener('mouseout',handleMouseEvents4);
+        rectdiv.addEventListener('mousedown',handleMouseEvents5);
+        rectdiv.addEventListener('mouseup',handleMouseEvents6);
+     </script>
+</body>
+</html>
